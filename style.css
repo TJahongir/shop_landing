@@ -1,97 +1,282 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+	font-size: 62.5%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+	margin: 0;
+	font-family: "Poppins";
+	box-sizing: border-box;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav {
+	margin: 4em;
+}
+
+nav ul {
+	list-style-type: none;
+	display: flex;
+	gap: 4.1em;
+	margin: 0;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: black;
+	text-transform: uppercase;
+	font-size: 1.6rem;
+	position: relative;
+}
+
+nav ul li a.active::before {
+	position: absolute;
+	content: "";
+	width: 35%;
+	height: 1px;
+	border-bottom: 2px solid black;
+	bottom: -6px;
+}
+
+nav ul li a::before {
+	position: absolute;
+	content: "";
+	width: 0%;
+	height: 1px;
+	border-bottom: 2px solid rgb(65, 65, 65);
+	bottom: -6px;
+	transition: width 0.5s;
+}
+
+/* Hero */
+
+main {
+	display: flex;
+	gap: 8em;
+}
+
+.left-col {
+	width: 45%;
+}
+
+.right-col {
+	flex-grow: 1;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+	font-size: 5.2rem;
+	font-family: "Playfair Display";
+	font-weight: normal;
+	margin: 0;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.subhead {
+	font-size: 1.8rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+.cta-btns {
+	margin: 5rem 0;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.cta-btns,
+.secondary-cta {
+	display: flex;
+	gap: 2em;
 }
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+
+.primary-cta {
+	background-color: #f1e2d1;
+	font-size: 1.8rem;
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+	border-radius: 1.9em;
+	padding: 1em 2em;
+	transition: background 0.5s;
+}
+
+.secondary-cta {
+	font-size: 1.8rem;
+	text-decoration: none;
+	color: black;
+	display: block;
+	padding: 1em 0;
+}
+
+.secondary-cta svg {
+	width: 20px;
+	transition: transform 0.3s;
+}
+
+.news {
+	display: flex;
+	gap: 3em;
+	padding: 5em;
+	border: 1px solid black;
+	border-radius: 0.8em;
+	position: relative;
+}
+
+.news::before {
+	position: absolute;
+	content: "";
+	background: url("./images/confetti.svg");
+	width: 100px;
+	height: 100px;
+	top: -20px;
+	left: -20px;
+	z-index: 2;
+}
+
+p.employees {
+	font-size: 3.3rem;
+	margin: 0;
+	font-weight: 200;
+	line-height: 100%;
+}
+
+p.details {
+	font-size: 1.4rem;
+	margin: 0;
+}
+
+.right-col {
+	display: grid;
+	gap: 2.3em;
+	grid-template-columns: repeat(2, auto);
+	grid-template-areas:
+		"left right"
+		"left bottom";
 }
 
 .card {
-  padding: 2em;
+	border-radius: 1.9em;
+	padding: 1.1em;
+	display: flex;
+	align-items: end;
+	background-size: 120%;
+	transition: background-size 0.8s;
+	-moz-transition: background-size 0.8s;
+	-ms-transition: background-size 0.8s;
+	-o-transition: background-size 0.8s;
+	-webkit-transition: background-size 0.8s;
 }
 
-.read-the-docs {
-  color: #888;
+.card1 {
+	grid-area: left;
+	background: url("./images/clothing1.jpg");
+	position: relative;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.card1::before {
+	position: absolute;
+	content: "";
+	background: url("./images/tag.svg") no-repeat;
+	width: 100%;
+	height: 100%;
+	top: 20px;
+	left: -30px;
+	pointer-events: none;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.card2 {
+	background: url("./images/clothing2.jpg");
+	grid-area: right;
+}
+
+.card3 {
+	background: url("./images/clothing3.jpg");
+	grid-area: bottom;
+	background-position: 40%;
+}
+
+.card-details {
+	background: white;
+	border-radius: 0.6em;
+	padding: 2em;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: transform 800ms;
+}
+
+.card-details a {
+	color: black;
+	text-decoration: none;
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+
+.card-details p {
+	font-size: 1.4rem;
+	margin: 0;
+}
+
+p.product-price {
+	font-size: 1.8rem;
+}
+
+/* Animations */
+nav ul li a:hover::before {
+	width: 35%;
+}
+
+.primary-cta:hover {
+	background: #e2d1bd;
+}
+
+.secondary-cta:hover svg {
+	transform: translateX(10px);
+}
+
+.secondary-cta:hover {
+	text-decoration: underline;
+}
+
+.card:hover {
+	background-size: 160%;
+}
+
+.card:hover .card-details {
+	transform: translateY(-20px);
+}
+
+.overlay {
+	position: absolute;
+	width: 100%;
+	z-index: 999;
+	background: white;
+	height: 100%;
+	animation: reveal 1s ease-in forwards;
+	transform-origin: bottom;
+}
+
+@keyframes reveal {
+	from {
+		transform: scaleY(1);
+	}
+	to {
+		transform: scaleY(0);
+	}
+}
+
+main {
+	animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+	transform: scale(0.4);
+}
+
+@keyframes growIn {
+	to {
+		transform: scale(1);
+	}
 }
