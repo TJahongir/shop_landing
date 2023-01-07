@@ -164,11 +164,7 @@ p.details {
 	display: flex;
 	align-items: end;
 	background-size: 120%;
-	transition: background-size 0.8s;
-	-moz-transition: background-size 0.8s;
-	-ms-transition: background-size 0.8s;
-	-o-transition: background-size 0.8s;
-	-webkit-transition: background-size 0.8s;
+	transition: background-position 0.8s;
 }
 
 .card1 {
@@ -244,7 +240,7 @@ nav ul li a:hover::before {
 }
 
 .card:hover {
-	background-size: 160%;
+	background-position: 20% 30%;
 }
 
 .card:hover .card-details {
